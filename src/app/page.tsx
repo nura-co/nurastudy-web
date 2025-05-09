@@ -33,7 +33,7 @@ const FirstScreen = () => {
   }
 
   return (
-    <div className="py-5 justify-between flex pointer-events-auto flex-col items-center h-screen w-full sticky top-0 z-10" ref={refContainer} style={{
+    <div className="py-5 justify-between flex pointer-events-auto flex-col items-center h-screen w-full sticky top-0" ref={refContainer} style={{
       transform: `translateY(-${progress * 20}vh)`
     }}>
       <Image src={'/logo.svg'} className="h-[50px] w-[50px] md:h-[70px] md:w-[70px]" height={70} width={70} alt="logo" />
@@ -52,7 +52,7 @@ const FirstScreen = () => {
 
 const About = () => {
   return (
-    <section className="bg-[#1c1c1c] text-[#f4f4f4] flex flex-col p-20 text-2xl md:text-4xl">
+    <section className="bg-[#1c1c1c] text-[#f4f4f4] flex flex-col p-20 text-2xl md:text-4xl relative z-50">
       <div className="container mx-auto px-11">
         <div className="leading-relaxed max-w-5xl mx-auto text-2xl md:text-4xl tracking-tight">
           <strong>We help students build better study habits, faster.</strong>{" "}
