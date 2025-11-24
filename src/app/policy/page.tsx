@@ -50,8 +50,8 @@ export default function Policy() {
 
         <h2 className="text-2xl font-semibold mt-4">Data Security</h2>
         <p>
-          We rely on Supabase's security, which includes encrypted storage for
-          sensitive information and secure authentication flows.
+          We rely on Supabase&apos;s security, which includes encrypted storage
+          for sensitive information and secure authentication flows.
         </p>
 
         <h2 className="text-2xl font-semibold mt-4">Your Rights</h2>
