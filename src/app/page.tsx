@@ -197,7 +197,7 @@ const DownloadSection = () => {
             companion.
           </p>
           <a
-            href="https://play.google.com/apps/internaltest/4701031743111238196"
+            href="https://play.google.com/apps/testing/com.nura.nurastudy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-white text-black rounded-lg text-lg md:text-xl hover:bg-gray-200 transition"
