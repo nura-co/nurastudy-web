@@ -1,39 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F4F4F4;
+  --background: #f4f4f4;
   --foreground: #171717;
-  font-family: 'Nimbus Sans L';
+  font-family: "Nimbus Sans L";
 }
 
 /* Regular */
 @font-face {
-  font-family: 'Nimbus Sans L';
-  src: url('/fonts/NimbusSanL-Reg-webfont.woff') format('woff');
+  font-family: "Nimbus Sans L";
+  src: url("/fonts/NimbusSanL-Reg-webfont.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 /* Italic */
 @font-face {
-  font-family: 'Nimbus Sans L';
-  src: url('/fonts/NimbusSanL-RegIta-webfont.woff') format('woff');
+  font-family: "Nimbus Sans L";
+  src: url("/fonts/NimbusSanL-RegIta-webfont.woff") format("woff");
   font-weight: 400;
   font-style: italic;
 }
 
 /* Bold */
 @font-face {
-  font-family: 'Nimbus Sans L';
-  src: url('/fonts/NimbusSanL-Bol-webfont.woff') format('woff');
+  font-family: "Nimbus Sans L";
+  src: url("/fonts/NimbusSanL-Bol-webfont.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 /* Bold Italic */
 @font-face {
-  font-family: 'Nimbus Sans L';
-  src: url('/fonts/NimbusSanL-BolIta-webfont.woff') format('woff');
+  font-family: "Nimbus Sans L";
+  src: url("/fonts/NimbusSanL-BolIta-webfont.woff") format("woff");
   font-weight: 700;
   font-style: italic;
 }

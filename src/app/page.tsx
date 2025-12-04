@@ -114,10 +114,6 @@ const About = () => {
               - <strong>Progress Tracking:</strong> Visualize your improvement
               with streaks, stats, and insights that keep you motivated.
             </p>
-            <p>
-              - <strong>Focus Tools:</strong> Use built-in timers and
-              distraction blockers to help you stay in the zone.
-            </p>
           </div>
         </div>
       </div>
