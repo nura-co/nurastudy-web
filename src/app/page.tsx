@@ -12,6 +12,7 @@ export default function Home() {
         <div className="absolute moving-grid -z-10 inset-0 h-full w-full bg-[#f4f4f4] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <FirstScreen />
         <About />
+        <DownloadSection />
         <Footer />
       </div>
     </ScrollObserver>
@@ -89,22 +90,49 @@ const FirstScreen = () => {
 };
 
 const About = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { scrollY } = useContext(ScrollContext);
+
+  let progress = 0;
+  const el = refContainer.current;
+
+  if (el) {
+    const screenHeight = window.innerHeight;
+    const aboutHeight = el.clientHeight;
+
+    // Calculate when About section enters viewport
+    const aboutTop = el.offsetTop;
+    const scrollIntoView = scrollY - aboutTop;
+
+    // Only start the transform after the section is fully visible
+    // Give it some breathing room to be fully readable first
+    const startTransform = screenHeight; // Start transforming after one full screen scroll
+
+    if (scrollIntoView > startTransform) {
+      progress = Math.min((scrollIntoView - startTransform) / aboutHeight, 1);
+    }
+  }
+
   return (
-    <section className="bg-[#1c1c1c] text-[#f4f4f4] flex flex-col p-20 text-2xl md:text-4xl relative z-50">
-      <div className="container mx-auto px-11">
-        <div className="leading-relaxed max-w-5xl mx-auto text-2xl md:text-4xl tracking-tight">
+    <section
+      ref={refContainer}
+      style={{
+        transform: `translateY(-${progress * 20}vh)`,
+      }}
+      className="bg-[#1c1c1c] text-[#f4f4f4] flex flex-col p-8 md:p-20 text-xl md:text-4xl sticky top-0 z-50 min-h-screen"
+    >
+      <div className="container md:mx-auto md:px-11">
+        <div className="leading-relaxed max-w-5xl mx-auto text-xl md:text-4xl tracking-tight">
           <strong>We help students build better study habits, faster.</strong>{" "}
           Our team designed NuraStudy to make studying feel simple, consistent,
-          and rewarding. so students can stay focused, track their progress, and
-          achieve their academic goals with confidence.
+          and rewarding.
           <br />
           <br />
           Our features:
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 mt-5">
             <p>
-              - <strong className="">Study Planning Made Simple:</strong> Create
-              personalized study schedules that adapt to your goals and
-              availability.
+              - <strong>Study Planning Made Simple:</strong> Create personalized
+              study schedules that adapt to your goals and availability.
             </p>
             <p>
               - <strong>Smart Reminders:</strong> Get gentle, well-timed nudges
@@ -120,9 +148,81 @@ const About = () => {
     </section>
   );
 };
+const DownloadSection = () => {
+  const refContainer = useRef<HTMLDivElement>(null);
+  const { scrollY } = useContext(ScrollContext);
+
+  let progress = 0;
+  const { current: elContainer } = refContainer;
+  if (elContainer) {
+    progress = Math.min(1, scrollY / elContainer.clientHeight);
+  }
+
+  return (
+    <section
+      ref={refContainer}
+      className="relative w-screen h-screen flex justify-center items-center overflow-hidden z-100"
+    >
+      <div className="absolute inset-0 flex">
+        <div
+          className="w-1/2 bg-[#f4f4f4] md:bg-[#f4f4f4]"
+          style={{ transform: `translateY(${progress * 40}px)` }}
+        />
+        <div
+          className="w-1/2 bg-[#f4f4f4] md:bg-[#1c1c1c]"
+          style={{ transform: `translateY(${progress * 40}px)` }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-50 flex flex-col md:flex-row w-full max-w-6xl mx-auto shadow-2xl rounded-xl overflow-hidden">
+        {/* Left: App Icon */}
+        <div className="md:w-1/2 flex justify-center items-center p-10">
+          <Image
+            src="/logo.svg"
+            alt="NuraStudy App Icon"
+            width={180}
+            height={180}
+            className="rounded-lg"
+          />
+        </div>
+
+        <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-white md:text-left p-10">
+          <h2 className="text-4xl md:text-6xl font-bold mb-5">
+            Try NuraStudy Beta!
+          </h2>
+          <p className="text-xl md:text-2xl mb-5 leading-relaxed max-w-md ">
+            Join our open beta on Google Play and start building better study
+            habits. Your feedback will help NuraStudy become the best study
+            companion.
+          </p>
+          <a
+            href="https://play.google.com/apps/internaltest/4701031743111238196"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-white text-black rounded-lg text-lg md:text-xl hover:bg-gray-200 transition"
+          >
+            Open Beta on Google Play
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Footer = () => {
-  return <div className="bg-black text-white">contact us</div>;
+  return (
+    <div className="bg-black text-white flex flex-col p-20 text-2xl md:text-4xl relative z-50">
+      <div className="container mx-auto px-11">
+        <div className="leading-relaxed max-w-5xl mx-auto text-2xl md:text-4xl tracking-tight text-center">
+          <strong>Contact us</strong>
+          <br />
+          <br />
+          <p className="text-xl">ormonment@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 function CursorTrail() {

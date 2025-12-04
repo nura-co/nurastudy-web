@@ -80,7 +80,7 @@ body {
   left: 0;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 1000;
   pointer-events: none;
 }
 
@@ -94,4 +94,9 @@ body {
 .cursor-hover {
   height: 100px;
   width: 100px;
+}
+
+a,
+button {
+  cursor: none;
 }
