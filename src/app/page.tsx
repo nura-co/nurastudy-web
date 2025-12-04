@@ -165,11 +165,11 @@ const DownloadSection = () => {
     >
       <div className="absolute inset-0 flex">
         <div
-          className="w-1/2 bg-[#f4f4f4] md:bg-[#f4f4f4]"
+          className="w-1/2 bg-[#f4f4f4] md:bg-[#1c1c1c]"
           style={{ transform: `translateY(${progress * 40}px)` }}
         />
         <div
-          className="w-1/2 bg-[#f4f4f4] md:bg-[#1c1c1c]"
+          className="w-1/2 bg-[#f4f4f4] md:bg-[#f4f4f4]"
           style={{ transform: `translateY(${progress * 40}px)` }}
         />
       </div>
@@ -179,7 +179,7 @@ const DownloadSection = () => {
         {/* Left: App Icon */}
         <div className="md:w-1/2 flex justify-center items-center p-10">
           <Image
-            src="/logo.svg"
+            src="/nurastudy.png"
             alt="NuraStudy App Icon"
             width={180}
             height={180}
@@ -187,7 +187,7 @@ const DownloadSection = () => {
           />
         </div>
 
-        <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-white md:text-left p-10">
+        <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left p-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-5">
             Try NuraStudy Beta!
           </h2>
