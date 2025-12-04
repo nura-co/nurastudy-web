@@ -189,21 +189,35 @@ const DownloadSection = () => {
 
         <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left p-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-5">
-            Try NuraStudy Beta!
+            Join the Beta Test
           </h2>
-          <p className="text-xl md:text-2xl mb-5 leading-relaxed max-w-md ">
-            Join our open beta on Google Play and start building better study
-            habits. Your feedback will help NuraStudy become the best study
-            companion.
+
+          <p className="text-xl md:text-2xl mb-8 leading-relaxed max-w-md">
+            Become a beta tester! First, join our tester group, then download
+            the app from Google Play. Your feedback will help shape NuraStudy.
           </p>
+
+          {/* JOIN GROUP BUTTON */}
+          <a
+            href="https://groups.google.com/g/nurastudy-testers"
+            target="_blank"
+            className="mb-4 inline-block px-6 py-3 bg-black text-white rounded-lg text-lg md:text-xl hover:bg-gray-800 transition hover"
+          >
+            👉 Join Tester Group
+          </a>
+
+          {/* DOWNLOAD LINK */}
           <a
             href="https://play.google.com/apps/testing/com.nura.nurastudy"
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-white text-black rounded-lg text-lg md:text-xl hover:bg-gray-200 transition"
+            className="inline-block px-6 py-3 bg-white text-black rounded-lg text-lg md:text-xl hover:bg-gray-200 transition hover"
           >
-            Open Beta on Google Play
+            📥 Download from Google Play
           </a>
+
+          <p className="text-sm opacity-60 mt-4">
+            (Step 1: Join group · Step 2: Download app)
+          </p>
         </div>
       </div>
     </section>
